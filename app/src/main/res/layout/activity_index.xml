@@ -91,13 +91,12 @@
                 android:id="@+id/cards_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical" >
+                android:orientation="vertical">
 
             <EditText
                 android:id="@+id/no_accounts_edittext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
                 android:hint="@string/no_hay_cuentas_existentes"
                 android:padding="10dp"
                 android:background="@drawable/edittext_background"

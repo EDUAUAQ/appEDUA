@@ -10,8 +10,13 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.IntentFilter;
+import android.content.Intent;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -24,6 +29,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class index extends AppCompatActivity {
+
+    private BroadcastReceiver accountUpdateReceiver;
 
     private TextView usernameTextView;
     private Button logoutButton;
@@ -38,6 +45,17 @@ public class index extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_index);
+
+        // Registra el BroadcastReceiver para actualizar cuentas al recibir el broadcast
+        accountUpdateReceiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                // Cuando se detecta una actualización, se refresca la lista de cuentas
+                getAccounts(userId, accessToken);
+            }
+        };
+        // Registrar el receptor con el filtro de la acción personalizada
+        LocalBroadcastManager.getInstance(this).registerReceiver(accountUpdateReceiver, new IntentFilter("com.topico1.UPDATE_ACCOUNTS"));
 
         // Inicialización de SharedPreferences y recuperación de datos
         sharedPrefs = getSharedPreferences("UserSession", MODE_PRIVATE);
@@ -140,11 +158,23 @@ public class index extends AppCompatActivity {
                                 for (int i = 0; i < accounts.length(); i++) {
                                     JSONObject account = accounts.getJSONObject(i);
                                     String accountId = account.getString("account_id");
+                                    String accountType = account.getString("account_type");
                                     // Inflar la vista para cada cuenta
                                     View accountView = getLayoutInflater().inflate(R.layout.card_item, null);
 
                                     TextView accountNumberTextView = accountView.findViewById(R.id.tv_account_number);
                                     accountNumberTextView.setText(accountId);
+
+                                    TextView accountTypeTextView = accountView.findViewById(R.id.tv_account_type);
+                                    accountTypeTextView.setText(accountType);
+
+                                    // Aplicar margen dinámico
+                                    LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
+                                            LinearLayout.LayoutParams.MATCH_PARENT,
+                                            LinearLayout.LayoutParams.WRAP_CONTENT
+                                    );
+                                    layoutParams.setMargins(0, 16, 0, 16); // margen superior e inferior
+                                    accountView.setLayoutParams(layoutParams);
 
                                     // Agregar la vista de la cuenta al contenedor
                                     cardsContainer.addView(accountView);
@@ -186,5 +216,14 @@ public class index extends AppCompatActivity {
         Log.d("No Accounts Message", "Message: " + message); // Log del mensaje que se va a mostrar
         noAccountsEditText.setVisibility(View.VISIBLE);
         noAccountsEditText.setText(message);
+    }
+    
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // Limpia el receptor para evitar fugas de memoria
+        if (accountUpdateReceiver != null) {
+            unregisterReceiver(accountUpdateReceiver);
+        }
     }
 }

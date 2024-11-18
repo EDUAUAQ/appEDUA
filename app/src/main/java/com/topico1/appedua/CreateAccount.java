@@ -1,6 +1,7 @@
 package com.topico1.appedua;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -103,6 +105,13 @@ public class CreateAccount extends DialogFragment {
 
                         if (code == 201) {
                             Toast.makeText(getActivity(), "Cuenta creada exitosamente", Toast.LENGTH_SHORT).show();
+
+                            // Cerrar el DialogFragment
+                            dismiss();
+
+                            // Enviar Broadcast para actualizar las cuentas en el index
+                            Intent intent = new Intent("com.topico1.UPDATE_ACCOUNTS");
+                            LocalBroadcastManager.getInstance(getActivity()).sendBroadcast(intent);
                         } else {
                             Toast.makeText(getActivity(), "Error: " + message, Toast.LENGTH_SHORT).show();
                         }

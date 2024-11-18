@@ -44,17 +44,34 @@
         android:text="Número de cuenta"
         android:textColor="@color/dorado_clasico"
         android:textSize="18sp" />
-
-    <!-- Botón de detalles -->
-    <Button
-        android:id="@+id/btn_view_details"
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="end"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="#FFFFFF"
-        android:text="@string/ver_detalles"
-        android:textColor="@color/negro"
-        android:textStyle="bold"
-        android:elevation="2dp" />
+        android:orientation="horizontal">
+
+        <!-- Tipo de cuenta -->
+        <TextView
+            android:id="@+id/tv_account_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Tipo de cuenta"
+            android:textColor="@color/dorado_clasico"
+            android:textSize="14sp" />
+
+        <!-- Botón de detalles -->
+        <Button
+            android:id="@+id/btn_view_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#FFFFFF"
+            android:text="@string/ver_detalles"
+            android:textColor="@color/negro"
+            android:textStyle="bold"
+            android:elevation="2dp"
+            android:layout_marginStart="190dp"/>
+
+    </RelativeLayout>
+
 </LinearLayout>
