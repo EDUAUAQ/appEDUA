@@ -139,7 +139,7 @@ public class index extends AppCompatActivity {
 
                                 for (int i = 0; i < accounts.length(); i++) {
                                     JSONObject account = accounts.getJSONObject(i);
-                                    String accountId = account.getString("accountId");
+                                    String accountId = account.getString("account_id");
                                     // Inflar la vista para cada cuenta
                                     View accountView = getLayoutInflater().inflate(R.layout.card_item, null);
 
