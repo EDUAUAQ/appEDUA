@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gris_grafito"
+    tools:context=".index">
+
+    <!-- Sección de Perfil de Usuario -->
+    <ImageView
+        android:id="@+id/profile_image"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/logo"
+        android:contentDescription="@string/imagen_de_usuario" />
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profile_image"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="@string/nombre_de_usuario"
+        android:textColor="@color/blanco"
+        android:textSize="18sp"
+        android:fontFamily="@font/raleway_regular" />
+
+    <!-- Botones de Cerrar Sesión y Crear Cuenta -->
+    <LinearLayout
+        android:id="@+id/button_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/username"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btn_logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:drawableStart="@drawable/logout"
+            android:backgroundTint="@color/beige_claro"
+            android:text="@string/cerrar_sesi_n"
+            android:textColor="@color/gris_grafito"/>
+
+        <Button
+            android:id="@+id/btn_create_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/plus"
+            android:backgroundTint="@color/beige_claro"
+            android:text="@string/crear_cuenta"
+            android:textColor="@color/gris_grafito"/>
+    </LinearLayout>
+
+    <!-- Sección de Tarjetas -->
+    <RelativeLayout
+        android:id="@+id/accounts_container"
+        android:layout_width="490dp"
+        android:layout_height="900dp"
+        android:layout_below="@id/button_container"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/container_cards_background" >
+
+        <TextView
+            android:id="@+id/accounts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:text="@string/mis_cuentas"
+            android:textColor="@color/negro"
+            android:textSize="18sp"
+            android:fontFamily="@font/roboto_flex_regular" />
+
+        <ScrollView
+            android:id="@+id/cards"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/accounts"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp">
+
+            <LinearLayout
+                android:id="@+id/cards_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/no_accounts_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:hint="@string/no_hay_cuentas_existentes"
+                android:padding="10dp"
+                android:background="@drawable/edittext_background"
+                android:textColor="@color/negro"
+                android:textSize="16sp"
+                android:visibility="gone"/>
+            </LinearLayout>
+
+
+        </ScrollView>
+    </RelativeLayout>
+
+</RelativeLayout>

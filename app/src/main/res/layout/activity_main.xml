@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="16dp"
+    android:gravity="center"
+    android:background="@color/gris_grafito"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/mainLogo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/logo"
+        android:layout_centerInParent="true"
+        android:contentDescription="Logo de la App" />
+
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bienvenido"
+        android:layout_below="@id/mainLogo"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="24dp"
+        android:textSize="26sp"
+        android:textColor="@color/blanco"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/subtitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tu banca de confianza"
+        android:layout_below="@id/welcomeText"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="8dp"
+        android:textSize="18sp"
+        android:textColor="@color/gris_grafito" />
+
+    <ProgressBar
+        android:id="@+id/loadingSpinner"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/subtitleText"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="32dp"
+        android:indeterminateTint="@color/dorado_suave" />
+</RelativeLayout>

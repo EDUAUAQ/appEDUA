@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@color/gris_grafito"
+    android:padding="20dp"
+    tools:context=".login">
+
+    <ImageView
+        android:id="@+id/mainLogo"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:src="@drawable/logo"
+        android:layout_centerInParent="true"
+        android:contentDescription="Logo de la App"
+        android:layout_marginBottom="20dp" />
+
+    <TextView
+        android:id="@+id/textBanco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Banco EDUA"
+        android:textAlignment="center"
+        android:textColor="@color/dorado_suave"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="50dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/textView"
+            android:text="Inicio de sesión"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@color/dorado_suave"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="30dp" />
+
+        <EditText
+            android:id="@+id/textMail"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/input_text"
+            android:drawableLeft="@drawable/mail"
+            android:drawablePadding="10dp"
+            android:ems="10"
+            android:hint="Correo"
+            android:inputType="text"
+            android:textColor="@color/blanco"
+            android:textColorHint="@color/verde_grisaceo"
+            android:paddingLeft="12dp"
+            android:layout_marginBottom="20dp" />
+
+        <EditText
+            android:id="@+id/textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/input_text"
+            android:drawableLeft="@drawable/baseline_lock_24"
+            android:drawablePadding="10dp"
+            android:ems="10"
+            android:hint="Contraseña"
+            android:inputType="textPassword"
+            android:textColor="@color/blanco"
+            android:textColorHint="@color/verde_grisaceo"
+            android:paddingLeft="12dp"
+            android:layout_marginBottom="30dp" />
+
+        <Button
+            android:id="@+id/btnIngresar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/dorado_suave"
+            android:text="Acceder"
+            android:textSize="20sp"
+            android:textColor="@color/azul_marino"
+            app:cornerRadius="16dp"
+            android:layout_marginBottom="20dp" />
+
+        <TextView
+            android:id="@+id/textPasswordForgotten"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="¿Olvidaste tu contraseña?"
+            android:textAlignment="center"
+            android:textColor="@color/verde_grisaceo"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/btnRegistro"
+            android:layout_width="220dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/dorado_suave"
+            android:text="Recuperar contraseña"
+            android:textSize="15sp"
+            android:textColor="@color/azul_marino"
+            app:cornerRadius="16dp"
+            android:layout_marginBottom="20dp" />
+
+        <TextView
+            android:id="@+id/textPregunta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="¿Aún no tienes cuenta?"
+            android:textAlignment="center"
+            android:textColor="@color/verde_grisaceo"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/btnRecuperar"
+            android:layout_width="160dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/dorado_suave"
+            android:onClick="irRegister"
+            android:text="Registrarse"
+            android:textColor="@color/azul_marino"
+            android:textSize="15sp"
+            app:cornerRadius="16dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

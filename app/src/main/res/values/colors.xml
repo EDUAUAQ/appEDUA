@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="blanco">#FFFFFFFF</color>
+    <color name="gris_grafito">#333333</color>
+    <color name="dorado_suave">#D4A373</color>
+    <color name="verde_grisaceo">#8AA29E</color>
+    <color name="beige_claro">#FAF3DD</color>
+    <color name="azul_marino">#0D3B66</color>
+    <color name="rojo">#800000</color>
+    <color name="dorado_clasico">#FFD700</color>
+    <color name="negro">#000000</color>
+</resources>

@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">AppEDUA</string>
+    <string name="title_activity_index">index</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="crear_cuenta">Crear cuenta</string>
+    <string name="cerrar_sesi_n">Cerrar sesión</string>
+    <string name="imagen_de_usuario">Imagen de usuario</string>
+    <string name="mis_cuentas">Mis cuentas</string>
+    <string name="ver_detalles">Ver detalles</string>
+    <string name="logo_de_visa">Logo de Visa</string>
+    <string name="edua">EDUA</string>
+    <string name="nombre_de_usuario">Nombre de usuario</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="balance">Balance</string>
+    <string name="no_hay_cuentas_existentes">No hay cuentas existentes</string>
+
+    <string-array name="account_types">
+        <item>Elija un tipo de cuenta...</item>
+        <item>Débito</item>
+        <item>Crédito</item>
+    </string-array>
+</resources>

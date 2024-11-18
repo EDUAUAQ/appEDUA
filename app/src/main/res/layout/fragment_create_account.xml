@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/gris_grafito"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".CreateAccount">
+
+    <!-- Spinner para seleccionar el tipo de cuenta -->
+    <Spinner
+        android:id="@+id/spinnerAccountType"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:entries="@array/account_types"
+        android:hint="Elija un tipo de cuenta..."
+        android:spinnerMode="dropdown"
+        android:paddingStart="10dp"
+        android:textColor="@color/blanco"
+        android:background="@drawable/spinner_background" />
+
+    <!-- EditText para el balance -->
+    <EditText
+        android:id="@+id/etBalance"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/edittext_background"
+        android:hint="@string/balance"
+        android:layout_marginTop="15dp"
+        android:textColorHint="@color/verde_grisaceo"
+        android:textColor="@color/negro"
+        android:inputType="numberDecimal"
+        android:paddingStart="10dp"/>
+
+    <!-- Botón para crear cuenta -->
+    <Button
+        android:id="@+id/btnCreateAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/beige_claro"
+        android:textColor="@color/gris_grafito"
+        android:layout_gravity="center"
+        android:text="@string/crear_cuenta"
+        android:layout_marginTop="25dp"/>
+
+</LinearLayout>
