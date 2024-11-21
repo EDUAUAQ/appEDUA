@@ -62,6 +62,12 @@ public class register extends AppCompatActivity {
         });
     }
 
+    public void irLogin(View view) {
+        Intent intent = new Intent(register.this, login.class);
+        startActivity(intent);
+        finish(); // Finalizar la actividad actual para evitar regresar
+    }
+
     private void registerUser(String username, String mail, String password, String firstName, String lastName) {
         String url = "https://1-five-fawn.vercel.app/user/signup"; // Asegúrate de que esta URL sea correcta
 
