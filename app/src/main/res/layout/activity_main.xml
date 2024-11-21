@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:padding="16dp"
     android:gravity="center"
-    android:background="@color/gris_grafito"
+    android:background="@color/fondo"
     tools:context=".MainActivity">
 
     <ImageView
@@ -25,7 +25,7 @@
         android:layout_centerHorizontal="true"
         android:paddingTop="24dp"
         android:textSize="26sp"
-        android:textColor="@color/blanco"
+        android:textColor="@color/negro"
         android:textStyle="bold" />
 
     <TextView

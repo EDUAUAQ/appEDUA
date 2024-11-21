@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/gris_grafito"
+    android:background="@color/azul_acero"
     android:orientation="vertical"
     android:padding="16dp"
     tools:context=".CreateAccount">
@@ -38,8 +38,8 @@
         android:id="@+id/btnCreateAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/beige_claro"
-        android:textColor="@color/gris_grafito"
+        android:backgroundTint="@color/azul"
+        android:textColor="@color/blanco"
         android:layout_gravity="center"
         android:text="@string/crear_cuenta"
         android:layout_marginTop="25dp"/>

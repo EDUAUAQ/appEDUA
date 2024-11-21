@@ -3,7 +3,7 @@
     android:layout_width="500dp"
     android:layout_height="500dp"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/beige_claro"
+    android:background="@color/fondo"
     android:padding="16dp"
     tools:context=".History">
 

@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    android:background="@color/gris_grafito"
+    android:background="@color/fondo"
     android:padding="20dp"
     tools:context=".register">
 
@@ -31,7 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
-            android:textColor="@color/dorado_suave"
+            android:textColor="@color/azul"
             android:textSize="20sp"
             android:textStyle="bold"
             android:layout_marginBottom="10dp" />
@@ -47,8 +47,8 @@
             android:ems="10"
             android:hint="Nombre de usuario"
             android:inputType="text"
-            android:textColor="@color/blanco"
-            android:textColorHint="@color/verde_grisaceo"
+            android:textColor="@color/negro"
+            android:textColorHint="@color/gris"
             android:paddingLeft="12dp"
             android:layout_marginBottom="5dp" />
 
@@ -63,8 +63,8 @@
             android:ems="10"
             android:hint="Correo electrónico"
             android:inputType="text"
-            android:textColor="@color/blanco"
-            android:textColorHint="@color/verde_grisaceo"
+            android:textColor="@color/negro"
+            android:textColorHint="@color/gris"
             android:paddingLeft="12dp"
             android:layout_marginBottom="5dp" />
 
@@ -79,8 +79,8 @@
             android:ems="10"
             android:hint="Contraseña"
             android:inputType="textPassword"
-            android:textColor="@color/blanco"
-            android:textColorHint="@color/verde_grisaceo"
+            android:textColor="@color/negro"
+            android:textColorHint="@color/gris"
             android:paddingLeft="12dp"
             android:layout_marginBottom="5dp" />
 
@@ -95,8 +95,8 @@
             android:ems="10"
             android:hint="Nombre(s)"
             android:inputType="text"
-            android:textColor="@color/blanco"
-            android:textColorHint="@color/verde_grisaceo"
+            android:textColor="@color/negro"
+            android:textColorHint="@color/gris"
             android:paddingLeft="12dp"
             android:layout_marginBottom="5dp" />
 
@@ -111,8 +111,8 @@
             android:ems="10"
             android:hint="Apellidos"
             android:inputType="text"
-            android:textColor="@color/blanco"
-            android:textColorHint="@color/verde_grisaceo"
+            android:textColor="@color/negro"
+            android:textColorHint="@color/gris"
             android:paddingLeft="12dp"
             android:layout_marginBottom="5dp" />
 
@@ -121,10 +121,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:backgroundTint="@color/dorado_suave"
+            android:backgroundTint="@color/azul"
             android:text="Registrarse"
             android:textSize="15sp"
-            android:textColor="@color/azul_marino"
+            android:textColor="@color/blanco"
             app:cornerRadius="16dp"
             android:layout_marginBottom="10dp" />
 
@@ -135,7 +135,7 @@
             android:layout_marginTop="10dp"
             android:text="¿Ya tienes cuenta?"
             android:textAlignment="center"
-            android:textColor="@color/verde_grisaceo"
+            android:textColor="@color/negro"
             android:textSize="14sp" />
 
         <Button
@@ -143,10 +143,10 @@
             android:layout_width="220dp"
             android:layout_height="40dp"
             android:layout_gravity="center"
-            android:backgroundTint="@color/dorado_suave"
+            android:backgroundTint="@color/azul"
             android:onClick="irLogin"
             android:text="Iniciar sesión"
-            android:textColor="@color/azul_marino"
+            android:textColor="@color/blanco"
             android:textSize="15sp"
             app:cornerRadius="16dp" />
 

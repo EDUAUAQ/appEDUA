@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/beige_claro"
+    android:background="@color/fondo"
     android:padding="16dp"
     tools:context=".Transfer">
 
@@ -105,7 +105,7 @@
                 android:layout_weight="1"
                 android:layout_marginStart="8dp"
                 android:text="Transferir"
-                android:backgroundTint="@color/dorado_suave"
+                android:backgroundTint="@color/azul"
                 android:textColor="@color/blanco"
                 android:padding="12dp" />
         </LinearLayout>

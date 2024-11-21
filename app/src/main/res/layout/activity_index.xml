@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gris_grafito"
+    android:background="@color/fondo"
     tools:context=".index">
 
     <!-- Sección de Perfil de Usuario -->
@@ -24,7 +24,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:text="@string/nombre_de_usuario"
-        android:textColor="@color/blanco"
+        android:textColor="@color/negro"
         android:textSize="18sp"
         android:fontFamily="@font/raleway_regular" />
 
@@ -44,18 +44,18 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="20dp"
             android:drawableStart="@drawable/logout"
-            android:backgroundTint="@color/vino_apagado"
+            android:backgroundTint="@color/azul"
             android:text="@string/cerrar_sesi_n"
-            android:textColor="@color/negro"/>
+            android:textColor="@color/blanco"/>
 
         <Button
             android:id="@+id/btn_create_account"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/plus"
-            android:backgroundTint="@color/vino_apagado"
+            android:backgroundTint="@color/azul"
             android:text="@string/crear_cuenta"
-            android:textColor="@color/negro"/>
+            android:textColor="@color/blanco"/>
     </LinearLayout>
 
     <!-- Sección de Tarjetas -->
@@ -74,7 +74,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginStart="20dp"
             android:text="@string/mis_cuentas"
-            android:textColor="@color/negro"
+            android:textColor="@color/blanco"
             android:textSize="18sp"
             android:fontFamily="@font/roboto_flex_regular" />
 

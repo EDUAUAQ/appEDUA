@@ -14,4 +14,7 @@
     <color name="azul_acero">#5A6978</color>
     <color name="rojo_apagado">#A93226</color>
     <color name="fondoTarjeta">#003366</color>
+    <color name="fondo">#f7f7f7</color>
+    <color name="azul">#003366</color>
+    <color name="gris">#777</color>
 </resources>

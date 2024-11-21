@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/gris_grafito"
+    android:background="@color/fondo"
     android:padding="16dp"
     tools:context=".AccountDetail">
 
@@ -43,7 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/detalles_de_la_cuenta"
-            android:textColor="@color/blanco"
+            android:textColor="@color/negro"
             android:textSize="20sp"
             android:textStyle="bold"
             android:layout_marginTop="8dp"
@@ -126,7 +126,7 @@
                 android:layout_height="wrap_content"
                 android:text="Transferir"
                 android:drawableLeft="@drawable/transfer"
-                android:backgroundTint="@color/terracota_apagada"
+                android:backgroundTint="@color/azul_acero"
                 android:textColor="@color/blanco"
                 android:textSize="11sp"
                 android:layout_marginEnd="8dp" />
@@ -135,7 +135,7 @@
                 android:id="@+id/btn_history"
                 android:layout_width="140dp"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/terracota_apagada"
+                android:backgroundTint="@color/azul_acero"
                 android:drawableLeft="@drawable/history"
                 android:text="Historial"
                 android:textColor="@color/blanco"
