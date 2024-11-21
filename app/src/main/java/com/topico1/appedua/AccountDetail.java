@@ -34,7 +34,7 @@ public class AccountDetail extends AppCompatActivity {
     private Button btnTransfer, btnHistory;
     private Handler handler;
     private Runnable runnable;
-    private static final int UPDATE_INTERVAL = 5000; // 5 segundos
+    private static final int UPDATE_INTERVAL = 2000; // 5 segundos
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
