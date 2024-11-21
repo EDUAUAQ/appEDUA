@@ -76,14 +76,14 @@
                     android:textStyle="bold"
                     android:fontFamily="@font/roboto_flex_regular" />
 
-                <!-- Logo de Visa -->
+                <!-- Logo de Visa
                 <ImageView
                     android:id="@+id/logo_visa"
                     android:layout_width="40dp"
                     android:layout_height="20dp"
                     android:src="@drawable/visa_logo"
                     android:layout_marginStart="230dp"
-                    android:contentDescription="Logo de Visa" />
+                    android:contentDescription="Logo de Visa" /> -->
             </LinearLayout>
 
             <!-- Número de cuenta -->
@@ -93,7 +93,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:text="Número de cuenta"
-                android:textColor="@color/dorado_clasico"
+                android:textColor="@color/blanco"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:fontFamily="@font/roboto_flex"/>
@@ -105,7 +105,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="Balance"
-                android:textColor="@color/dorado_clasico"
+                android:textColor="@color/blanco"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:fontFamily="@font/roboto_flex"
@@ -157,8 +157,7 @@
                 android:layout_height="wrap_content"
                 android:text="Número de cuenta:"
                 android:textColor="@color/blanco"
-                android:textSize="16sp"
-                android:layout_marginBottom="8dp" />
+                android:textSize="16sp"/>
 
             <TextView
                 android:id="@+id/tv_accountid2"
@@ -174,8 +173,7 @@
                 android:layout_height="wrap_content"
                 android:text="Nombre del propietario:"
                 android:textColor="@color/blanco"
-                android:textSize="16sp"
-                android:layout_marginBottom="8dp" />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/tv_account_user"
@@ -191,8 +189,7 @@
                 android:layout_height="wrap_content"
                 android:text="Tipo de cuenta:"
                 android:textColor="@color/blanco"
-                android:textSize="16sp"
-                android:layout_marginBottom="8dp" />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/tv_account_type"
@@ -220,7 +217,7 @@
                 android:layout_marginBottom="8dp" />
         </LinearLayout>
 
-        <!-- Botón eliminar cuenta -->
+        <!-- Botón eliminar cuenta
         <Button
             android:id="@+id/btn_delete_account"
             android:layout_width="200dp"
@@ -230,7 +227,7 @@
             android:textColor="@color/blanco"
             android:drawableLeft="@drawable/remove"
             android:layout_marginTop="16dp"
-            android:elevation="4dp" />
+            android:elevation="4dp" /> -->
     </LinearLayout>
 
 

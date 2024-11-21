@@ -59,20 +59,16 @@ public class History extends DialogFragment {
     }
 
     private void getTransfers(String accountId, String accessToken) {
-        String url = "https://1-five-fawn.vercel.app/transfer/" + accountId; // URL con el accountId
+        String url = "https://1-five-fawn.vercel.app/transfer/" + accountId;
 
-        // Agregar el accessToken en los headers
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
                         try {
-                            // Obtener el código de respuesta
                             int statusCode = response.getInt("code");
 
-                            // Si la respuesta es exitosa (código 200), procesamos las transferencias
                             if (statusCode == 200) {
-                                // Revisamos si hay transferencias en la respuesta
                                 JSONArray transfers = response.getJSONArray("data");
 
                                 if (transfers.length() > 0) {
@@ -88,20 +84,17 @@ public class History extends DialogFragment {
                                         containerHistory.addView(transferView);
                                     }
                                 } else {
-                                    // Si no hay transferencias, mostramos un mensaje
                                     TextView noTransfersMessage = new TextView(getContext());
                                     noTransfersMessage.setText("No hay transferencias.");
                                     noTransfersMessage.setTextSize(16);
                                     containerHistory.addView(noTransfersMessage);
                                 }
                             } else if (statusCode == 404) {
-                                // Si no se encuentran transferencias, mostramos un mensaje diferente
                                 TextView noTransfersMessage = new TextView(getContext());
                                 noTransfersMessage.setText("No se encontraron transferencias para esta cuenta.");
                                 noTransfersMessage.setTextSize(16);
                                 containerHistory.addView(noTransfersMessage);
                             } else {
-                                // Si hay otro código de error, mostramos un mensaje genérico
                                 TextView errorMessage = new TextView(getContext());
                                 errorMessage.setText("Error al obtener las transferencias.");
                                 errorMessage.setTextSize(16);
@@ -115,21 +108,17 @@ public class History extends DialogFragment {
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                // En caso de error en la conexión
-                Toast.makeText(getContext(), "Error en la conexión", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "No hay transferencias", Toast.LENGTH_SHORT).show();
             }
         }) {
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
-                // Crear un HashMap para los headers
                 Map<String, String> headers = new HashMap<>();
-                // Agregar el Authorization header con el token de acceso
                 headers.put("Authorization", "Bearer " + accessToken);
                 return headers;
             }
         };
 
-        // Agregar la solicitud a la cola de Volley
         Volley.newRequestQueue(getContext()).add(request);
     }
 

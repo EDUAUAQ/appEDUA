@@ -70,12 +70,20 @@
                 android:gravity="center"/>
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/container_history"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:paddingTop="8dp"/>
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/container_history"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+                <!-- Aquí se agregarán las transferencias -->
+            </LinearLayout>
+
+        </ScrollView>
 
     </LinearLayout>
 </RelativeLayout>
