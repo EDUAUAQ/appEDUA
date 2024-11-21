@@ -1,17 +1,17 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.AppEDUA" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- Color de la barra de estado -->
-        <item name="android:statusBarColor">@color/azul</item>
-        <!-- Configura texto oscuro en la barra de estado si el fondo es claro -->
-        <item name="android:windowLightStatusBar">true</item>
+        <!-- Primary color for the app -->
+        <item name="colorPrimary">@color/azul</item>
+        <item name="colorPrimaryDark">@color/azul</item> <!-- Cambia este para la Status Bar -->
+        <item name="android:statusBarColor">@color/azul</item> <!-- También puedes añadir esta línea -->
     </style>
 
     <style name="Theme.AppEDUA" parent="Base.Theme.AppEDUA" />
     <style name="Theme.AppEDUA.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="android:statusBarColor">@color/azul</item>
     </style>
     <style name="Theme.AppEDUA.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="Theme.AppEDUA.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
