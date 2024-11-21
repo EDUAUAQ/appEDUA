@@ -16,6 +16,7 @@ import android.content.IntentFilter;
 import android.content.Intent;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import com.android.volley.AuthFailureError;
@@ -54,6 +55,7 @@ public class index extends AppCompatActivity {
                 getAccounts(userId, accessToken);
             }
         };
+
         // Registrar el receptor con el filtro de la acción personalizada
         LocalBroadcastManager.getInstance(this).registerReceiver(accountUpdateReceiver, new IntentFilter("com.topico1.UPDATE_ACCOUNTS"));
 
@@ -88,12 +90,22 @@ public class index extends AppCompatActivity {
 
         // Manejar clic en el botón de cerrar sesión
         logoutButton.setOnClickListener(v -> {
+            // Limpia los datos de la sesión en SharedPreferences
             SharedPreferences.Editor editor = sharedPrefs.edit();
             editor.clear();
             editor.apply();
+
+            // Desregistrar el BroadcastReceiver para evitar fugas de memoria
+            if (accountUpdateReceiver != null) {
+                LocalBroadcastManager.getInstance(index.this).unregisterReceiver(accountUpdateReceiver);
+            }
+
+            // Redirigir a la pantalla de login
             Intent intent = new Intent(index.this, login.class);
             startActivity(intent);
-            finish();  // Finalizar la actividad actual
+
+            // Finalizar la actividad actual para que no se pueda volver a ella
+            finish();
         });
     }
 
@@ -133,7 +145,6 @@ public class index extends AppCompatActivity {
         queue.add(profileRequest);
     }
 
-    // Método para obtener las cuentas del usuario
     private void getAccounts(String userId, String accessToken) {
         String url = "https://1-five-fawn.vercel.app/account/" + userId; // Endpoint para las cuentas
 
@@ -176,6 +187,25 @@ public class index extends AppCompatActivity {
                                     layoutParams.setMargins(0, 16, 0, 16); // margen superior e inferior
                                     accountView.setLayoutParams(layoutParams);
 
+                                    // Establecer el evento click en el botón
+                                    Button btnViewDetail = accountView.findViewById(R.id.btn_view_details); // Asegúrate de que el ID es correcto
+                                    btnViewDetail.setOnClickListener(v -> {
+                                        try {
+                                            // Crear un Intent para iniciar la actividad AccountDetailsActivity
+                                            Intent intent = new Intent(index.this, AccountDetail.class);
+
+                                            // Pasar el accountId como extra
+                                            intent.putExtra("account_id", accountId);
+
+                                            // Iniciar la actividad
+                                            startActivity(intent);
+                                        } catch (Exception e) {
+                                            e.printStackTrace();
+                                            Toast.makeText(this, "Error al abrir los detalles de la cuenta", Toast.LENGTH_SHORT).show();
+                                        }
+                                    });
+
+
                                     // Agregar la vista de la cuenta al contenedor
                                     cardsContainer.addView(accountView);
                                 }
@@ -211,19 +241,25 @@ public class index extends AppCompatActivity {
         queue.add(accountsRequest);
     }
 
+
     // Mostrar mensaje si no hay cuentas
     private void showNoAccountsMessage(String message) {
         Log.d("No Accounts Message", "Message: " + message); // Log del mensaje que se va a mostrar
         noAccountsEditText.setVisibility(View.VISIBLE);
         noAccountsEditText.setText(message);
     }
-    
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        // Limpia el receptor para evitar fugas de memoria
+        // Limpia el receptor solo si ha sido registrado
         if (accountUpdateReceiver != null) {
-            unregisterReceiver(accountUpdateReceiver);
+            try {
+                LocalBroadcastManager.getInstance(this).unregisterReceiver(accountUpdateReceiver);
+            } catch (IllegalArgumentException e) {
+                // Ignorar el error si el receptor no estaba registrado
+                e.printStackTrace();
+            }
         }
     }
 }

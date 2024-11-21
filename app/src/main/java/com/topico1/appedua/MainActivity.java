@@ -22,38 +22,48 @@ public class MainActivity extends AppCompatActivity {
 
         ImageView mainLogo = findViewById(R.id.mainLogo);
         TextView welcomeText = findViewById(R.id.welcomeText);
-
+        TextView subtitleText = findViewById(R.id.subtitleText);
         ProgressBar loadingSpinner = findViewById(R.id.loadingSpinner);
-        loadingSpinner.setVisibility(View.GONE);  // Ocultar el ProgressBar
 
-        Animation fadeInAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_in);
+        loadingSpinner.setVisibility(View.GONE); // Ocultar el ProgressBar inicialmente
 
-        mainLogo.startAnimation(fadeInAnimation);
-        welcomeText.startAnimation(fadeInAnimation);
+        // Animaciones
+        Animation logoAnimation = AnimationUtils.loadAnimation(this, R.anim.logo_animation);
+        Animation textFadeIn = AnimationUtils.loadAnimation(this, R.anim.text_fade_in);
 
-        fadeInAnimation.setAnimationListener(new Animation.AnimationListener() {
+        // Iniciar animaciones para el logo y el texto al mismo tiempo
+        mainLogo.startAnimation(logoAnimation);
+        welcomeText.startAnimation(textFadeIn);
+        subtitleText.startAnimation(textFadeIn);
+
+        // Animaciones terminadas, realizar acciones posteriores
+        Animation.AnimationListener animationListener = new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
-                // No hacer nada al inicio de la animación
+                // No hacer nada
             }
 
             @Override
             public void onAnimationEnd(Animation animation) {
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        Intent intent = new Intent(MainActivity.this, login.class);
-                        startActivity(intent);
-                        finish();
-                    }
-                }, 500);  // Añade un pequeño retraso (500 ms) para asegurar que la animación termine
-            }
+                // Mostrar el ProgressBar después de las animaciones
+                new Handler().postDelayed(() -> loadingSpinner.setVisibility(View.VISIBLE), 800);
 
+                // Cambiar a la pantalla de login después de un retraso total
+                new Handler().postDelayed(() -> {
+                    Intent intent = new Intent(MainActivity.this, login.class);
+                    startActivity(intent);
+                    finish();
+                }, 2500); // Retraso total para cambio de pantalla
+            }
 
             @Override
             public void onAnimationRepeat(Animation animation) {
+                // No hacer nada
             }
-        });
-    }
+        };
 
+        // Asignar el mismo listener a ambas animaciones
+        logoAnimation.setAnimationListener(animationListener);
+        textFadeIn.setAnimationListener(animationListener);
+    }
 }

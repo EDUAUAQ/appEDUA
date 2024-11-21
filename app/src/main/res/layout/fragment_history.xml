@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="500dp"
+    android:layout_height="500dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/beige_claro"
+    android:padding="16dp"
+    tools:context=".History">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Título de la pantalla -->
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Historial de Transferencias"
+            android:textSize="22sp"
+            android:textColor="@color/azul_marino"
+            android:paddingBottom="24dp"
+            android:textAlignment="center"
+            android:fontFamily="sans-serif-medium"/>
+
+        <!-- Encabezados -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="8dp"
+            android:paddingBottom="16dp"
+            android:background="@color/verde_grisaceo">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Remitente"
+                android:textSize="16sp"
+                android:textColor="@color/blanco"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Destinatario"
+                android:textSize="16sp"
+                android:textColor="@color/blanco"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Monto"
+                android:textSize="16sp"
+                android:textColor="@color/blanco"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Fecha"
+                android:textSize="16sp"
+                android:textColor="@color/blanco"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/container_history"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingTop="8dp"/>
+
+    </LinearLayout>
+</RelativeLayout>

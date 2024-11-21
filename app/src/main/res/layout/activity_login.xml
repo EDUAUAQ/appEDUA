@@ -13,23 +13,11 @@
 
     <ImageView
         android:id="@+id/mainLogo"
-        android:layout_width="110dp"
-        android:layout_height="110dp"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
         android:src="@drawable/logo"
         android:layout_centerInParent="true"
-        android:contentDescription="Logo de la App"
-        android:layout_marginBottom="20dp" />
-
-    <TextView
-        android:id="@+id/textBanco"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Banco EDUA"
-        android:textAlignment="center"
-        android:textColor="@color/dorado_suave"
-        android:textSize="36sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="50dp" />
+        android:contentDescription="Logo de la App"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -89,28 +77,6 @@
             android:backgroundTint="@color/dorado_suave"
             android:text="Acceder"
             android:textSize="20sp"
-            android:textColor="@color/azul_marino"
-            app:cornerRadius="16dp"
-            android:layout_marginBottom="20dp" />
-
-        <TextView
-            android:id="@+id/textPasswordForgotten"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="¿Olvidaste tu contraseña?"
-            android:textAlignment="center"
-            android:textColor="@color/verde_grisaceo"
-            android:textSize="14sp" />
-
-        <Button
-            android:id="@+id/btnRegistro"
-            android:layout_width="220dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center"
-            android:backgroundTint="@color/dorado_suave"
-            android:text="Recuperar contraseña"
-            android:textSize="15sp"
             android:textColor="@color/azul_marino"
             app:cornerRadius="16dp"
             android:layout_marginBottom="20dp" />

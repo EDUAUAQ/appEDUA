@@ -38,6 +38,17 @@ public class login extends AppCompatActivity {
         textMail = findViewById(R.id.textMail);
         textPassword = findViewById(R.id.textPassword);
 
+        // Recibir los datos pasados desde el Intent, si existen
+        Intent intent = getIntent();
+        String savedEmail = intent.getStringExtra("user_mail");
+        String savedPassword = intent.getStringExtra("user_password");
+
+        // Si los datos existen, llenamos los campos
+        if (savedEmail != null && savedPassword != null) {
+            textMail.setText(savedEmail);
+            textPassword.setText(savedPassword);
+        }
+
         btnIngresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

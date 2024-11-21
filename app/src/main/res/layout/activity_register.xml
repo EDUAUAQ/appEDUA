@@ -13,23 +13,11 @@
 
     <ImageView
         android:id="@+id/mainLogo"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:src="@drawable/logo"
         android:layout_centerInParent="true"
-        android:contentDescription="Logo de la App"
-        android:layout_marginBottom="10dp" />
-
-    <TextView
-        android:id="@+id/textBanco"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Banco EDUA"
-        android:textAlignment="center"
-        android:textColor="@color/dorado_suave"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="20dp" />
+        android:contentDescription="Logo de la App"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -52,7 +40,7 @@
             android:id="@+id/textUsername"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/input_text"
             android:drawableLeft="@drawable/baseline_person_24"
             android:drawablePadding="10dp"
@@ -62,7 +50,7 @@
             android:textColor="@color/blanco"
             android:textColorHint="@color/verde_grisaceo"
             android:paddingLeft="12dp"
-            android:layout_marginBottom="10dp" />
+            android:layout_marginBottom="5dp" />
 
         <EditText
             android:id="@+id/textMail"
@@ -78,7 +66,7 @@
             android:textColor="@color/blanco"
             android:textColorHint="@color/verde_grisaceo"
             android:paddingLeft="12dp"
-            android:layout_marginBottom="10dp" />
+            android:layout_marginBottom="5dp" />
 
         <EditText
             android:id="@+id/textPassword"
@@ -94,7 +82,7 @@
             android:textColor="@color/blanco"
             android:textColorHint="@color/verde_grisaceo"
             android:paddingLeft="12dp"
-            android:layout_marginBottom="10dp" />
+            android:layout_marginBottom="5dp" />
 
         <EditText
             android:id="@+id/textFirstName"
@@ -110,7 +98,7 @@
             android:textColor="@color/blanco"
             android:textColorHint="@color/verde_grisaceo"
             android:paddingLeft="12dp"
-            android:layout_marginBottom="10dp" />
+            android:layout_marginBottom="5dp" />
 
         <EditText
             android:id="@+id/textLastName"
@@ -126,25 +114,25 @@
             android:textColor="@color/blanco"
             android:textColorHint="@color/verde_grisaceo"
             android:paddingLeft="12dp"
-            android:layout_marginBottom="20dp" />
+            android:layout_marginBottom="5dp" />
 
         <Button
             android:id="@+id/btnRegistrar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:backgroundTint="@color/dorado_suave"
             android:text="Registrarse"
             android:textSize="15sp"
             android:textColor="@color/azul_marino"
             app:cornerRadius="16dp"
-            android:layout_marginBottom="20dp" />
+            android:layout_marginBottom="10dp" />
 
         <TextView
             android:id="@+id/textPregunta"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:text="¿Ya tienes cuenta?"
             android:textAlignment="center"
             android:textColor="@color/verde_grisaceo"

@@ -9,4 +9,8 @@
     <color name="rojo">#800000</color>
     <color name="dorado_clasico">#FFD700</color>
     <color name="negro">#000000</color>
+    <color name="terracota_apagada">#A47E6A</color>
+    <color name="vino_apagado">#6B4F4F</color>
+    <color name="azul_acero">#5A6978</color>
+    <color name="rojo_apagado">#A93226</color>
 </resources>

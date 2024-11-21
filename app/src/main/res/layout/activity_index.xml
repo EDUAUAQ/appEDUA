@@ -44,18 +44,18 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="20dp"
             android:drawableStart="@drawable/logout"
-            android:backgroundTint="@color/beige_claro"
+            android:backgroundTint="@color/vino_apagado"
             android:text="@string/cerrar_sesi_n"
-            android:textColor="@color/gris_grafito"/>
+            android:textColor="@color/negro"/>
 
         <Button
             android:id="@+id/btn_create_account"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/plus"
-            android:backgroundTint="@color/beige_claro"
+            android:backgroundTint="@color/vino_apagado"
             android:text="@string/crear_cuenta"
-            android:textColor="@color/gris_grafito"/>
+            android:textColor="@color/negro"/>
     </LinearLayout>
 
     <!-- Sección de Tarjetas -->

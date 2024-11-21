@@ -23,6 +23,16 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="balance">Balance</string>
     <string name="no_hay_cuentas_existentes">No hay cuentas existentes</string>
+    <string name="regresar_al_inicio">Regresar al inicio</string>
+    <string name="volver">Volver</string>
+    <string name="detalles_de_la_cuenta">Detalles de la cuenta</string>
+    <string name="n_mero_de_cuenta_del_remitente">Número de cuenta del remitente:</string>
+    <string name="n_mero_de_cuenta_del_destinatario">Número de cuenta del destinatario</string>
+    <string name="eliminar_cuenta">Eliminar cuenta</string>
+    <string name="fecha">Fecha</string>
+    <string name="monto">Monto</string>
+    <string name="receptor">Receptor</string>
+    <string name="emisor">Emisor</string>
 
     <string-array name="account_types">
         <item>Elija un tipo de cuenta...</item>

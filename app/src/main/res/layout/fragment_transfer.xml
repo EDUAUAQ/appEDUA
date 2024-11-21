@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/beige_claro"
+    android:padding="16dp"
+    tools:context=".Transfer">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- Número de cuenta del remitente -->
+        <TextView
+            android:id="@+id/remitenteLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Número de cuenta del remitente"
+            android:textSize="16sp"
+            android:textColor="@color/negro"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/remitenteCuenta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_background"
+            android:padding="12dp"
+            android:textSize="14sp"
+            android:inputType="none"
+            android:focusable="false"
+            android:textColor="@color/negro"
+            android:text="num cuenta" />
+
+        <!-- Número de cuenta del destinatario -->
+        <TextView
+            android:id="@+id/destinatarioLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/n_mero_de_cuenta_del_destinatario"
+            android:textSize="16sp"
+            android:textColor="@color/negro"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/destinatarioCuenta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_background"
+            android:padding="12dp"
+            android:hint="Ingrese el número de cuenta"
+            android:textSize="14sp"
+            android:textColor="@color/gris_grafito"
+            android:inputType="number" />
+
+        <!-- Monto -->
+        <TextView
+            android:id="@+id/montoLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Monto a transferir"
+            android:textSize="16sp"
+            android:textColor="@color/negro"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/montoTransferencia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_background"
+            android:padding="12dp"
+            android:hint="Ingrese el monto"
+            android:textSize="14sp"
+            android:textColor="@color/gris_grafito"
+            android:inputType="numberDecimal" />
+
+        <!-- Botones -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="24dp">
+
+            <Button
+                android:id="@+id/cancelarButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:text="Cancelar"
+                android:backgroundTint="@color/rojo_apagado"
+                android:textColor="@color/blanco"
+                android:padding="12dp" />
+
+            <Button
+                android:id="@+id/transferirButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:text="Transferir"
+                android:backgroundTint="@color/dorado_suave"
+                android:textColor="@color/blanco"
+                android:padding="12dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

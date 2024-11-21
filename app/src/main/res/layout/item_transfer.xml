@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="12dp"
+    android:background="@drawable/item_background"
+    android:layout_marginBottom="8dp"
+    android:weightSum="4">
+
+    <!-- Remitente -->
+    <TextView
+        android:id="@+id/transfer_sender"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/emisor"
+        android:textSize="14sp"
+        android:textColor="@color/azul_acero"
+        android:layout_weight="1"
+        android:gravity="center"/>
+
+    <!-- Destinatario -->
+    <TextView
+        android:id="@+id/transfer_recipient"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/receptor"
+        android:textSize="14sp"
+        android:textColor="@color/azul_acero"
+        android:layout_weight="1"
+        android:layout_marginStart="20dp"
+        android:gravity="center"/>
+
+    <!-- Monto -->
+    <TextView
+        android:id="@+id/transfer_amount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/monto"
+        android:textSize="14sp"
+        android:textColor="@color/azul_acero"
+        android:layout_weight="1"
+        android:layout_marginStart="20dp"
+        android:gravity="center"/>
+
+    <!-- Fecha -->
+    <TextView
+        android:id="@+id/transfer_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/fecha"
+        android:textSize="14sp"
+        android:textColor="@color/azul_acero"
+        android:layout_weight="1"
+        android:layout_marginStart="20dp"
+        android:gravity="center"/>
+
+    <!-- ImageButton para eliminar la transferencia
+    <ImageButton
+        android:id="@+id/delete_button"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/delete"
+        android:contentDescription="@string/eliminar_cuenta"
+        android:layout_gravity="end"
+        android:padding="8dp"/> -->
+
+</LinearLayout>

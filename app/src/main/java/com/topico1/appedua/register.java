@@ -74,22 +74,12 @@ public class register extends AppCompatActivity {
                             int code = jsonResponse.getInt("code");
 
                             if (code == 201) {
-                                // Registro exitoso
-                                // Obtener el access token y userId de la respuesta
-                                String accessToken = jsonResponse.getString("token");  // Suponiendo que el backend devuelve un token
-                                String userId = jsonResponse.getString("userId"); // O el ID de usuario si lo devuelve
-
-                                // Guardar el token y el userId en SharedPreferences
-                                SharedPreferences sharedPrefs = getSharedPreferences("UserSession", MODE_PRIVATE);
-                                SharedPreferences.Editor editor = sharedPrefs.edit();
-                                editor.putString("access_token", accessToken);  // Guardamos el token
-                                editor.putString("user_id", userId);            // Guardamos el userId
-                                editor.apply();
-
                                 Toast.makeText(getApplicationContext(), "Registro exitoso", Toast.LENGTH_LONG).show();
 
-                                // Redirigir al Index Activity
-                                Intent intent = new Intent(register.this, index.class);
+                                // Redirigir al Login Activity y pasar los datos
+                                Intent intent = new Intent(register.this, login.class);
+                                intent.putExtra("user_mail", mail);  // Pasar correo
+                                intent.putExtra("user_password", password);  // Pasar contraseña
                                 startActivity(intent);
                                 finish();
                             } else {
@@ -99,7 +89,7 @@ public class register extends AppCompatActivity {
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
-                            Toast.makeText(getApplicationContext(), "Error en la respuesta del servidor", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), "Error en la respuesta del servidor: " + e.getMessage(), Toast.LENGTH_LONG).show();
                         }
                     }
                 },
@@ -107,7 +97,7 @@ public class register extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         // Error al realizar la petición
-                        Toast.makeText(getApplicationContext(), "Error en el registro", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Error en el registro: " + error.getMessage(), Toast.LENGTH_LONG).show();
                     }
                 }
         ) {
@@ -116,19 +106,17 @@ public class register extends AppCompatActivity {
                 try {
                     // Crear el objeto JSON con los datos
                     JSONObject jsonBody = new JSONObject();
-                    jsonBody.put("user_name", username); // Cambié el nombre de la clave a 'user_name'
-                    jsonBody.put("user_mail", mail); // Cambié el nombre de la clave a 'user_mail'
-                    jsonBody.put("user_password", password); // Cambié el nombre de la clave a 'user_password'
+                    jsonBody.put("user_name", username);
+                    jsonBody.put("user_mail", mail);
+                    jsonBody.put("user_password", password);
                     jsonBody.put("first_name", firstName);
                     jsonBody.put("last_name", lastName);
 
                     // Convertir el objeto JSON a bytes con la codificación UTF-8
                     return jsonBody.toString().getBytes("UTF-8");
-                } catch (JSONException e) {
+                } catch (JSONException | UnsupportedEncodingException e) {
                     e.printStackTrace();
-                    return null;
-                } catch (UnsupportedEncodingException e) {
-                    e.printStackTrace();
+                    Toast.makeText(getApplicationContext(), "Error al crear el cuerpo de la solicitud: " + e.getMessage(), Toast.LENGTH_LONG).show();
                     return null;
                 }
             }
