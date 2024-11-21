@@ -44,11 +44,22 @@ public class CreateAccount extends DialogFragment {
         btnCreateAccount = view.findViewById(R.id.btnCreateAccount);
 
         // Configurar el Spinner
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),
-                R.array.account_types, R.layout.spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerAccountType.setPopupBackgroundDrawable(getResources().getDrawable(R.drawable.spinner_dropdown_background));
-        spinnerAccountType.setAdapter(adapter);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+                getActivity(),
+                R.array.account_types, // El array de elementos
+                R.layout.spinner_item // Diseño personalizado para el elemento seleccionado
+        );
+
+    // Aplica un diseño personalizado también al desplegable
+            adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
+
+    // Cambia el fondo del desplegable
+            spinnerAccountType.setPopupBackgroundDrawable(
+                    getResources().getDrawable(R.drawable.spinner_dropdown_background)
+            );
+
+    // Configura el adaptador al Spinner
+            spinnerAccountType.setAdapter(adapter);
 
         // Crear un dialogo de alerta
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
