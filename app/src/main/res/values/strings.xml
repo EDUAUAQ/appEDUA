@@ -33,6 +33,7 @@
     <string name="monto">Monto</string>
     <string name="receptor">Receptor</string>
     <string name="emisor">Emisor</string>
+    <string name="elija_un_tipo_de_cuenta">Elija un tipo de cuenta...</string>
 
     <string-array name="account_types">
         <item>Elija un tipo de cuenta...</item>

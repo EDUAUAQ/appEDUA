@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/azul_acero"
+    android:background="@color/gris"
     android:orientation="vertical"
     android:padding="16dp"
     tools:context=".CreateAccount">
@@ -14,11 +14,12 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:entries="@array/account_types"
-        android:hint="Elija un tipo de cuenta..."
+        android:hint="@string/elija_un_tipo_de_cuenta"
         android:spinnerMode="dropdown"
         android:paddingStart="10dp"
         android:textColor="@color/blanco"
-        android:background="@drawable/spinner_background" />
+        android:background="@drawable/spinner_background"
+        tools:ignore="RtlSymmetry" />
 
     <!-- EditText para el balance -->
     <EditText
@@ -28,10 +29,11 @@
         android:background="@drawable/edittext_background"
         android:hint="@string/balance"
         android:layout_marginTop="15dp"
-        android:textColorHint="@color/verde_grisaceo"
+        android:textColorHint="@color/gris"
         android:textColor="@color/negro"
         android:inputType="numberDecimal"
-        android:paddingStart="10dp"/>
+        android:paddingStart="10dp"
+        tools:ignore="RtlSymmetry" />
 
     <!-- Botón para crear cuenta -->
     <Button
