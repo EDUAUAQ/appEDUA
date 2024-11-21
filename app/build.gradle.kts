@@ -42,6 +42,7 @@ dependencies {
     implementation ("com.android.volley:volley:1.2.1")
     implementation ("androidx.security:security-crypto:1.1.0-alpha04")
     implementation ("androidx.localbroadcastmanager:localbroadcastmanager:1.0.0")
+    implementation ("com.journeyapps:zxing-android-embedded:4.3.0")
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
